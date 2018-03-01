@@ -39,7 +39,7 @@ Parser::Parser(std::string filename) {
     line.erase(0, pos + delimiter.length());
     i++;
   }
-  this->steps = atoi(token.c_str());
+  this->steps = atoi(line.c_str());
   int nb = 0;
   while (std::getline(in, line)) {
     int i = 0;
@@ -61,12 +61,10 @@ Parser::Parser(std::string filename) {
       if (i == 4) {
         r.earliest = atoi(token.c_str());
       }
-      if (i == 5) {
-        r.latest = atoi(token.c_str());
-      }
       line.erase(0, pos + delimiter.length());
       i++;
     }
+    r.latest = atoi(line.c_str());
     r.id = nb;
     this->Rides.push_back(r);
     nb++;
