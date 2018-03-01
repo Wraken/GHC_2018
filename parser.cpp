@@ -66,6 +66,7 @@ Parser::Parser(std::string filename) {
     }
     r.latest = atoi(line.c_str());
     r.id = nb;
+    r.size = std::abs(r.startx - r.endx) + std::abs(r.starty - r.endy);
     this->Rides.push_back(r);
     nb++;
   }

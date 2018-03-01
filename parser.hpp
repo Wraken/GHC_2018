@@ -15,6 +15,7 @@ struct Ride {
   int latest;
   bool Filed;
   int id;
+  int size;
 };
 
 struct Car {
