@@ -6,14 +6,6 @@
 #include <list>
 #include <string>
 
-struct Car {
-  int x;
-  int y;
-  int id;
-  std::list<int> RideDone;
-  bool OnRide;
-};
-
 struct Ride {
   int startx;
   int starty;
@@ -23,6 +15,15 @@ struct Ride {
   int latest;
   bool Filed;
   int id;
+};
+
+struct Car {
+  int x;
+  int y;
+  int id;
+  std::list<int> RideDone;
+  struct Ride *CurRide;
+  bool OnRide;
 };
 
 class Parser {
